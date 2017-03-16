@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/users">Show All Users</a>
+      <a href="/users/new_users">New User</a>
+    </nav>
+    <h1>All Users</h1>
+  <ul>
+
+
+    <% @users.each_with_index do |users,index| %>
+  <li>
+    <a href="/users/<%= index %>"><%= users.username %></a>
+  </li>
+  <% end %>
+</ul>
+    <h4></h4>
+  </body>
+</html>
