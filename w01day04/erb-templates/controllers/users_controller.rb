@@ -30,8 +30,9 @@ class UsersController < Sinatra::Base
   end
 
   get "/:id" do #"/" is router and do is controller . get is a function
-    id = params[:id]/to_i
 
+    id = params[:id].to_i
+    #
     @user = $users[id]
 
        erb :show_user

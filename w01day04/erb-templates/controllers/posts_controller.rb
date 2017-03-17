@@ -30,7 +30,7 @@ class PostsController < Sinatra::Base
   end
 
   get "/:id" do #"/" is router and do is controller . get is a function
-    id = params[:id]/to_i
+    id = params[:id].to_i
 
     @post = $posts[id]
 
