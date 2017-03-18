@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/posts">Posts</a>
+      <a href="/posts/new">New Posts</a>
+    </nav>
+    <h1>Blog Posts</h1>
+  <ul>
+
+
+    <% @posts.each_with_index do |posts,index| %>
+  <li>
+    <a href="/posts/<%= index %>"><%= posts.name %></a>
+    <a href="/posts/<%= index %>/edit">edit</a>
+    <form action="/posts/<%= index %>" method="POST">
+              <input type="submit" value="delete">
+              <input type="hidden" name="_method" value="DELETE">
+          </form>
+  </li>
+  <% end %>
+</ul>
+    <h4></h4>
+  </body>
+</html>

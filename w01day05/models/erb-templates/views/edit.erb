@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Form</title>
+  </head>
+  <body>
+    <h1>Edit</h1>
+<ul>
+    <nav>
+      <a href="/posts">Posts</a>
+      <a href="/posts/new">New Posts</a>
+    </nav>
+  </ul>
+
+    <form action="/posts/<%= @id %>" method="POST">
+    <label>First name:</label><input type="text" name="name" value="<%= @post.name %>"><br>
+    <label>Last name:</label><input type="text" name="body" value="<%= @post.body %>"> <br>
+    <!-- <label>Last name:</label><textarea></textarea><br> -->
+
+    <p></p>
+    <input type="submit" value="Submit">
+    <!-- method overrride as forms can only sent GET or Post requests -->
+    <input type="hidden" name="_method" value="PUT">
+
+    </form>
+
+  </body>
+</html>
