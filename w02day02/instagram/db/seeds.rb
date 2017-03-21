@@ -14,7 +14,7 @@ pic4 = Picture.create({ img: 'image4.png', caption: 'Fouth image'})
 user = User.create({name:"Steve"})
 user1 = User.create({name:"Sam"})
 
-comm1 = Comment.create({ body: 'body text - Steve'})
+comm1 = Comment.create({ body: 'text'})
 comm2 = Comment.create({ body: 'body text - Steve'})
 comm3 = Comment.create({ body: 'body text - Sam'})
 comm4 = Comment.create({ body: 'body text - Sam'})
