@@ -10,20 +10,23 @@ pic1 = Picture.create({ img: 'image1.png', caption: 'First image'})
 pic2 = Picture.create({ img: 'image2.png', caption: 'Second image'})
 pic3 = Picture.create({ img: 'image3.png', caption: 'Third image'})
 pic4 = Picture.create({ img: 'image4.png', caption: 'Fouth image'})
-pic5 = Picture.create({ img: 'image5.png', caption: 'Fifth image'})
+
+user = User.create({name:"Steve"})
+user1 = User.create({name:"Sam"})
+
+comm1 = Comment.create({ body: 'body text - Steve'})
+comm2 = Comment.create({ body: 'body text - Steve'})
+comm3 = Comment.create({ body: 'body text - Sam'})
+comm4 = Comment.create({ body: 'body text - Sam'})
 
 
 
-# Picture.create({ img: 'image1.png', caption: 'First image'})
-# Picture.create({ img: 'image2.png', caption: 'Second image'})
-# Picture.create({ img: 'image3.png', caption: 'Third image'})
-# Picture.create({ img: 'image4.png', caption: 'Fouth image'})
-# Picture.create({ img: 'image5.png', caption: 'Fifth image'})
+user.pictures.push pic1
+user.pictures.push pic2
+user.comments.push comm1
+user.comments.push comm2
 
-user = User.create({name: "Steve"})
-
-user.picture.push pic1
-user.picture.push pic2
-user.picture.push pic3
-user.picture.push pic4
-user.picture.push pic5
+user1.pictures.push pic3
+user1.pictures.push pic4
+user1.comments.push comm3
+user1.comments.push comm4

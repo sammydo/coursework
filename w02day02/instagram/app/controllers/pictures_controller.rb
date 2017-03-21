@@ -25,6 +25,7 @@ class PicturesController < ApplicationController
 
 def new
 end
+
   def create
     picture = Picture.create(picture_params)
 
