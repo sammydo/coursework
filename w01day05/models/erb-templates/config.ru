@@ -4,16 +4,18 @@ require_relative "controllers/users_controller.rb"
 require_relative "controllers/static_controller.rb"
 require_relative "classes/post.rb"
 require_relative "classes/user.rb"
+require_relative "models/post.rb"
 require "pg"
 
 
 
 
-  $posts = [
-    Post.new("Post 1" , "Some post text "),
-    Post.new("Post 2" , "Some post text 2")
-
-  ]
+  # $posts = [
+  #   Post.new("Post 1" , "Some post text "),
+  #   Post.new("Post 2" , "Some post text 2")
+  #
+  # ]
+    #  @posts = PostModel.all
 
     $users = [
       User.new("devops1" , "Samuel" , "Udoh"),

@@ -7,9 +7,9 @@ class PostsController < Sinatra::Base
   set :views, Proc.new { File.join(root, "views") }
 
 
-  get "/" do #"/" is router and do is controller . get is a function
-  @posts = $posts
-
+  get "/" do  #"/" is router and do is controller . get is a function
+  # @posts = $posts
+     @posts = PostModel.all
     erb :index
   end
 
@@ -34,29 +34,29 @@ class PostsController < Sinatra::Base
     # "update"
 
     # load the object we want to update
-      id = params[:id].to_i
+      param_id = params[:id].to_i
 
       # dummy data
-      post = $posts[id]
+      post = PostModel.find param_id
 
       # put the changes in to the object
       post.name = params[:name]
       post.body = params[:body]
 
-      # save to the database
-      $posts[id] = post
+      PostModel.update param_id , post
+
 
       # redirect to another page ( show )
-      redirect "/posts/#{id}"
+      redirect "/posts/#{param_id}"
 
   end
 
   get "/:id/edit" do #"/" is router and do is controller . get is a function
     # "EDIT"
-    @id = params[:id].to_i
+    id = params[:id].to_i
 
 
-    @post = $posts[@id]
+    @post = PostModel.find id
     erb :edit
 
   end
@@ -64,7 +64,10 @@ class PostsController < Sinatra::Base
   get "/:id" do #"/" is router and do is controller . get is a function
     id = params[:id].to_i
 
-    @post = $posts[id]
+    # @post = $posts[id]
+    @post = PostModel.find id
+    # @post = PostModel.all[id]
+
 
        erb :show
   end
@@ -73,7 +76,9 @@ class PostsController < Sinatra::Base
     # "delete"
     id = params[:id].to_i
 
-    $posts.delete_at(id)
+    # $posts.delete_at(id)
+    PostModel.delete id
+
 
       redirect "/posts"
   end
