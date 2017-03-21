@@ -1,0 +1,16 @@
+<h1>Pitcure#index</h1>
+<p>Find me in app/views/pitcure/index.html.erb</p>
+
+
+<div id="pictures">
+
+<div class="picture">
+  <% @pictures.each do |pic| %>
+  <li><a href="/pictures/ <%= pic.id %>"> <%= pic.id %></a></li>
+  <p><%= link_to pic.id , pic%></p>
+
+<% end %>
+
+</div>
+
+</div>
