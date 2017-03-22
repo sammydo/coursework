@@ -12,6 +12,8 @@
     <input type="hidden" name="_method" value="DELETE">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   </form>
+
+  <%= render "comments/form" , picture: @picture%>
 </div>
 
 
@@ -19,14 +21,19 @@
 <div class="comment">
 
 
-<%  @commentb.each do |comm| %>
+<%  @picture.comments.reverse.each do |comm| %>
 
-<% if comm.user_id == comm.picture_id%>
+  <h2>  <%= comm.user.name%>
+    <% if comm.user.pictures.first %>
+      <img src="<%= comm.user.pictures.first.img %>" alt="">
+    <% end %>
+
+  (<%= comm.user.comments.length%>) </h2>
   <h1>  <%= comm.body %> </h1>
+
 
   <% end %>
 
-  <%end%>
 
 
 </div>

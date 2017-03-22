@@ -30,3 +30,14 @@ user1.pictures.push pic3
 user1.pictures.push pic4
 user1.comments.push comm3
 user1.comments.push comm4
+
+comm1.picture = pic1
+comm1.save
+comm2.picture = pic2
+comm2.save
+comm3.picture = pic2
+comm3.save
+comm4.picture = pic3
+comm4.save
+
+# pic1.comm1

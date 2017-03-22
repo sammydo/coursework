@@ -6,8 +6,8 @@
 
 <div class="picture">
   <% @pictures.each do |pic| %>
-  <li><a href="/pictures/ <%= pic.id %>"> <%= pic.id %></a></li>
-  <p><%= link_to pic.id , pic%></p>
+  <!-- <li><a href="/pictures/ <%= pic.id %>"> <%= pic.id %></a></li> -->
+  <li><%= link_to pic.id , pic%></li>
 
 <% end %>
 

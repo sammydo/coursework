@@ -11,22 +11,8 @@ class PicturesController < ApplicationController
 
     #load all the picturess
 
-    # @commentb = Comment.select(:body)
-
-
-
-
-    @commentb = Comment.all
-    $user= User.all
-
-    # @commentb = Comment.select(:body)
-
-
-
 
     @picture = Picture.find params[:id]
-    @comment = Comment.find params[:id]
-
 
     render :'pictures/show'
   end

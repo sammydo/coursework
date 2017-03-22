@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   get 'pictures' => 'pictures#index'
 
   root "static#home"
@@ -7,7 +9,9 @@ Rails.application.routes.draw do
 
   get 'picture/new' => 'pictures#new'
 
-  resources :pictures
+  resources :pictures do
+    resources :comments, only: [:create]
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
