@@ -15,7 +15,7 @@
       <br>
 
       <h3><b><%= @picture.user.name %>Followers :</b><%= @picture.user.followers.length %></h3>
-      <%= render "following/followingform" , picture: @picture%>
+      <%= render "followers/followerbtn" , {user: @picture.user , returnto: picture_path(@picture)} %>
 
 
   </div>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'following/create'
+
+  # get 'following/create'
+  # post 'users/:user_id/followers' => 'followers#create'
 
   get 'likes/create'
 
@@ -13,11 +15,13 @@ Rails.application.routes.draw do
 
   get 'picture/new' => 'pictures#new'
 
+  resources :users do
+    resources :followers, only: [:create, :delete]
+  end
+
   resources :pictures do
     resources :comments, only: [:create]
     resources :likes, only: [:create]
-    resources :following, only: [:create]
-
 
   end
 
