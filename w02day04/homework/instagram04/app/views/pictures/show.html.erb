@@ -1,0 +1,51 @@
+<h1>Show Page</h1>
+
+
+<div class="container">
+
+<div class="picture">
+  <p>Picture ID : <%= @picture.id %></p>
+  <div class="picimage">
+
+    <img src="<%= @picture.img %>"  style="width:202px;height:138px;margin-bottom: 39px;"/>
+    <h3><b>Picture Caption :</b> &nbsp; <%= @picture.caption %></h3>
+
+      <h3><b>Picture Likes :</b><%= @picture.likes.length %></h3>
+      <%= render "likes/likeform" , picture: @picture%>
+      <br>
+
+      <h3><b><%= @picture.user.name %>Followers :</b><%= @picture.user.followers.length %></h3>
+      <%= render "followers/followerbtn" , {user: @picture.user , returnto: picture_path(@picture)} %>
+
+
+  </div>
+  <br>
+  <form action="<%= picture_path @picture %>" method="POST">
+    <input type="submit" value="Delete">
+    <input type="hidden" name="_method" value="DELETE">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  </form>
+
+  <%= render "comments/form" , picture: @picture%>
+</div>
+
+
+<br><br><br>
+<h1>Comments :</h1>
+<div class="comment">
+<%  @picture.comments.reverse.each do |comm| %>
+
+  <h2>  <%= comm.user.name%>
+    <% if comm.user.pictures.first %>
+      <img src="<%= comm.user.pictures.first.img %>" alt="">
+    <% end %>
+  (<%= comm.user.comments.length%>) </h2>
+  <h1>  <%= comm.body %> </h1>
+
+
+  <% end %>
+
+
+
+</div>
+</div>

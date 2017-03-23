@@ -1,0 +1,7 @@
+<form class="" action="<%= user_followers_path user%>" method="Post">
+
+  <input type="submit" value="Follow">
+  <input type="hidden" value="<%= returnto %>" name="return_to">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+</form>

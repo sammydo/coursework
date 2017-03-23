@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+ @import "bootstrap";
+
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+.picture{
+  margin-top: 100px;
+}
+
+.picimage{
+  margin-bottom: 5px;
+}
+.comment{
+  width: 200px;
+}
+
+
+// registration formm
+
+.register-form{
+    font-size: 16px;
+   left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    margin-top: 394px;
+
+}
+
+.regbutton{
+    height: 50px;
+    width: 200px;
+    background-color:tomato;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    border: none !important;
+    margin-bottom: 5px;
+}
+.regbutton:hover{
+    color: white;
+    background-color:#aa422f;
+}
+.regbutton:active{
+    color: white;
+    background-color:#aa422f;
+}
+.logbutton{
+    height: 50px;
+    width: 200px;
+    background-color:yellowgreen;
+    border-radius: 0px;
+    font-size: 18px;
+    color:white;
+    // border: none !important;
+    margin-bottom: 5px;
+}
+.logbutton:hover{
+    color: white;
+    background-color:darkolivegreen;
+}
+.logbutton:active{
+    color: white;
+    background-color:darkolivegreen;
+}
+
+
+
+.register-form label{
+    color: blue;
+}
+.register-form input{
+    margin-bottom: 5px;
+    width: 430px;
+    height: 40px;
+    border-radius: 0px;
+}
+
+//
+
+.vertical-offset-100{
+    padding-top:100px;
+    display: flex;
+    justify-content: center;
+}
