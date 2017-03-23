@@ -12,39 +12,50 @@ pic3 = Picture.create({ img: 'image3.png', caption: 'Third image'})
 pic4 = Picture.create({ img: 'image4.png', caption: 'Fouth image'})
 
 user = User.create({name:"Steve"})
-user1 = User.create({name:"Sam"})
+user1 = User.create({name:"Ossy"})
+user2 = User.create({name:"Sal"})
+user3 = User.create({name:"John"})
 
-comm1 = Comment.create({ body: 'text'})
-comm2 = Comment.create({ body: 'body text - Steve'})
-comm3 = Comment.create({ body: 'body text - Sam'})
-comm4 = Comment.create({ body: 'body text - Sam'})
+comm1 = Comment.create({ body: 'This is my message'})
+comm2 = Comment.create({ body: 'haha another message'})
+comm3 = Comment.create({ body: 'This is getting boring .message'})
+comm4 = Comment.create({ body: 'ok bye'})
 
 
 
 user.pictures.push pic1
-user.pictures.push pic2
-user.comments.push comm1
-user.comments.push comm2
+user1.pictures.push pic2
+user2.comments.push comm1
+user3.comments.push comm2
 
-user1.pictures.push pic3
-user1.pictures.push pic4
-user1.comments.push comm3
-user1.comments.push comm4
+user3.pictures.push pic3
+user2.pictures.push pic4
+user.comments.push comm3
+user2.comments.push comm4
 
 comm1.picture = pic1
-comm1.save
 comm2.picture = pic2
-comm2.save
 comm3.picture = pic2
-comm3.save
 comm4.picture = pic3
+comm1.save
+comm2.save
+comm3.save
 comm4.save
+
 
 # likes
 
-user.liked.push pic1
-user.liked.push pic2
-user1.liked.push pic3
 user1.liked.push pic1
+user.liked.push pic2
+user2.liked.push pic3
+user3.liked.push pic1
+
+# user1.followers.push user2
+# user1.followers.push user3
+# user1.followers.push user4
+
+
+
+
 
 # pic1.comm1
