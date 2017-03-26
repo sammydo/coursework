@@ -7,7 +7,7 @@
   <p>Picture ID : <%= @picture.id %></p>
   <div class="picimage">
 
-    <img src="<%= @picture.img %>"  style="width:202px;height:138px;margin-bottom: 39px;"/>
+    <img src="<%= @picture.avatar.thumb.url %>"  style="width:202px;height:138px;margin-bottom: 39px;"/>
     <h3><b>Picture Caption :</b> &nbsp; <%= @picture.caption %></h3>
 
       <h3><b>Picture Likes :</b><%= @picture.likes.length %></h3>

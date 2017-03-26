@@ -29,14 +29,18 @@ def new
 end
 
   def create
-    picture = Picture.create(picture_params)
+    picture = Picture.new(picture_params)
+
+    picture.user = current_user
+
+    picture.save
 
     redirect_to :pictures
   end
 
 private
   def picture_params
-    params.require(:picture).permit(:img , :caption)
+    params.require(:picture).permit(:caption , :avatar)
 
   end
 end

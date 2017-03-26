@@ -6,15 +6,11 @@ Rails.application.routes.draw do
   # post 'users/:user_id/followers' => 'followers#create'
 
 
-  get 'pictures' => 'pictures#index'
 
   get '/logout' , to: 'sessions#destroy'
 
   root "static#home"
 
-  get 'pictures/:id' => 'pictures#show'
-
-  get 'picture/new' => 'pictures#new'
 
   resources :users do
     resources :followers, only: [:create, :delete]
